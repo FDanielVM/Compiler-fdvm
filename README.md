@@ -17,10 +17,13 @@ Carrera: INCO
 CENTRO UNIVERSITARIO DE CIENCIAS EXACTAS EN INGENIERÍAS CUCEI
 
 Objetivo:
+
 En la clase de Seminario de Traductores 2 tenemos que crear un codigo que pueda realizar un analisis lexico, un analisis sintactico, y un analisis semantico a un codigo que el usuario introduzca.
 
 Como se realiza:
+
 Analisis lexico:
+
 El analisis lexico lo hacemos con un ciclo que va a estar obteniendo todos los datos que el usuario introduce y despues se pone a revisarlos uno por uno y categorizandolos
 
 ![ciclo lexico](https://user-images.githubusercontent.com/89429934/145030972-6c0fa97a-ea5b-4ca2-aaca-433b49832d5c.PNG)
@@ -35,49 +38,93 @@ Y despues revisa los tokens:
 
 
 Sintactico:
+
 Una vez que se haya terminado el lexico, se pasa al sintactico, el cual por medio de unas reglas de produccion, contenidas en el archivo GR2slrRules.txt, las cuales son las siguientes:
+
 Programa -> Definiciones
+
 Definiciones -> ''
+
 Definiciones -> Definicion Definiciones
+
 Definicion -> DefVar
+
 Definicion -> DefFunc
+
 DefVar -> tipo id ListaVar ;
+
 ListaVar -> ''
+
 ListaVar -> , id ListaVar
+
 DefFunc -> tipo id ( Parametros ) BloqFunc
+
 Parametros -> ''
+
 Parametros -> tipo id ListaParam
+
 ListaParam -> ''
+
 ListaParam -> , tipo id ListaParam
+
 BloqFunc -> { DefLocales }
+
 DefLocales -> ''
+
 DefLocales -> DefLocal DefLocales
+
 DefLocal -> DefVar
+
 DefLocal -> Sentencia
+
 Sentencias -> ''
+
 Sentencias ->Sentencia Sentencias
+
 Sentencia -> id = Expresion ;
+
 Sentencia -> if ( Expresion ) SentenciaBloque Otro
+
 Sentencia ->while ( Expresion ) Bloque
+
 Sentencia -> return Expresion ;
+
 Sentencia -> LlamadaFunc ;
+
 Otro -> ''
+
 Otro -> else SentenciaBloque
+
 Bloque -> { Sentencias }
+
 Argumentos -> ''
+
 Argumentos -> Expresion ListaArgumentos
+
 ListaArgumentos -> ''
+
 ListaArgumentos ->, Expresion ListaArgumentos
+
 Expresion -> LlamadaFunc
+
 Expresion -> id
+
 Expresion -> constante
+
 LlamadaFunc -> id ( Argumentos )
+
 SentenciaBloque -> Sentencia
+
 SentenciaBloque -> Bloque
+
 Expresion -> ( Expresion )
+
 Expresion -> Expresion opSuma Expresion
+
 Expresion -> Expresion opLogico Expresion
+
 Expresion -> Expresion opMul Expresion
+
 Expresion -> Expresion opRelac Expresion
 
 
@@ -93,7 +140,9 @@ el programa se dispone a hacer push y pop a una pila interna y realizar reduccio
 
 
 Analisis semantico:
+
 Despues de haber terminado se pasa al analisis semantico
+
 en el analisis semantico, el programa ahora se dedida a revisar que el arbol de derivacion se pueda generar
 
 ![semantico](https://user-images.githubusercontent.com/89429934/145032048-a99fdde1-1190-4abc-ba7a-fb51c596bd01.PNG)
@@ -110,4 +159,5 @@ Finalmente para tener como que una manera que el usuario utilize la aplicacion s
 En si eso es lo que tengo, no logre hacer el nasm generando el codigo
 
 Conclusiones:
+
 El realizar esta actividad requiere de mucho tiempo y dedicacion, ademas de generar un codigo en el que se retomen muchos conceptos vistos con anterioridad en la carrera como lo son las pilas, los nodos, los ciclos, los automatas, y poner demaciados casos de acciones que nuestro programa puede tomar para llegar a un resultado
