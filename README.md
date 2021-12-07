@@ -1,11 +1,19 @@
 Compilador lexico, sintactico y semantico
+
 Alumno: Vera Meza Fernando Daniel
+
 Codigo: 214404155
+
 Fecha: 07/12/2021
+
 Materia: Seminario de Solucion de problemas de Traductores 2
+
 Profesor: Michel Emanuel Lopez Franco
+
 Sección: D02
+
 Carrera: INCO
+
 CENTRO UNIVERSITARIO DE CIENCIAS EXACTAS EN INGENIERÍAS CUCEI
 
 Objetivo:
